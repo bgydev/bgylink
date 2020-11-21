@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGY Link Temizleyici</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container pt-5 d-flex justify-content-center">
+        <img width="150" src="bgy.png" alt="bgy logo">
+    </div>
+    <div class="container pt-5 ">
+        <div class="form-group">
+            <label for="kanserlink">BGY Link</label>
+            <textarea class="form-control" id="fucklink"></textarea>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-group">
+            <label for="temizlink">Temiz Hali</label>
+            <textarea class="form-control" id="clearlink"></textarea>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <div class="form-group">
+            <button class="btn btn-success" id="convert"> Dönüştür</button>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#convert" ).click(function() {
+            $("#clearlink").val($("#fucklink").val().replace(/[\u1000-\uFFFF]|[ ]/g, ''))
+        });
+        });  
+</script>
+</html>
